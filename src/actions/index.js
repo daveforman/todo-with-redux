@@ -14,7 +14,7 @@ export function  getList(){
 }
 
 export function addNewItem(item){
-    const response = axios.post(`${BASE_URL}/todos${API_KEY}`);
+    const response = axios.post(`${BASE_URL}/todos${API_KEY}`, item);
 
     return{
         type: types.ADD_ITEM,
