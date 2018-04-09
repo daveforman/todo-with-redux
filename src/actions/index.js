@@ -13,6 +13,15 @@ export function  getList(){
     }
 }
 
+export function getSingleItem(id){
+    const response = axios.get(`${BASE_URL}/todos/${id + API_KEY}`);
+
+    return{
+        type: types.GET_SINGLE_ITEM,
+        payload: response
+    }
+}
+
 export function addNewItem(item){
     const response = axios.post(`${BASE_URL}/todos${API_KEY}`, item);
 
@@ -22,4 +31,8 @@ export function addNewItem(item){
     }
 }
 
+//Delete Item:
+//const delete = axios.delete(`${BASE_URL}/todos${API_KEY}`);
 
+//Toggle Complete:
+//const complete = axios.put(`${BASE_URL}/todos${API_KEY}`);
